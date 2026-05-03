@@ -4,122 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل الطلاب | مدارس رياض الإبداع الأهلية</title>
+    <!-- الخطوط والأيقونات -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #008751; /* أخضر مستوحى من الشعار */
-            --secondary-color: #0056b3; /* أزرق مستوحى من الشعار */
-            --bg-color: #f4f7f6;
+            --primary-color: #8d3939; /* البني المحمر */
+            --secondary-color: #5d2626; 
+            --bg-color: #dbbcbc; /* لون الخلفية */
             --text-color: #333;
+            --whatsapp-green: #25d366;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: var(--bg-color);
             margin: 0;
-            padding: 20px;
+            padding: 10px; /* تقليل الحواف الخارجية */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
+        /* حاوية الصفحة */
         .container {
             background: #ffffff;
-            max-width: 500px;
+            max-width: 420px; /* تصغير عرض الحاوية قليلاً */
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             overflow: hidden;
             text-align: center;
             border-top: 8px solid var(--primary-color);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .header {
-            padding: 30px 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+            padding: 15px 15px 10px; /* تقليل الحشوة الداخلية للهيدر */
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
         }
 
         .logo {
-            max-width: 180px;
-            margin-bottom: 15px;
-        }
-
-        .title {
-            color: var(--secondary-color);
-            font-size: 22px;
-            font-weight: 800;
-            margin: 10px 0;
-        }
-
-        .subtitle {
-            color: var(--primary-color);
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 25px;
-        }
-
-        .links-container {
-            padding: 0 25px 40px;
-        }
-
-        .reg-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #fff;
-            border: 2px solid #e0e0e0;
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 15px;
-        }
-
-        .reg-link:hover {
-            border-color: var(--secondary-color);
-            background-color: var(--secondary-color);
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,86,179,0.2);
-        }
-
-        .reg-link i {
-            margin-left: 10px;
-        }
-
-        /* تمييز رابط الصف الأول الابتدائي */
-        .featured {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-        }
-        
-        .featured:hover {
-            background-color: #006b40;
-            color: white;
-        }
-
-        .footer {
-            background: #f9f9f9;
-            padding: 15px;
-            font-size: 12px;
-            color: #777;
-            border-top: 1px solid #eee;
+            max-width: 130px; /* تصغير الشعار */
+            margin-bottom: 8px;
         }
 
         .year-badge {
             background: #ffc107;
             color: #000;
-            padding: 4px 12px;
+            padding: 3px 12px;
             border-radius: 50px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            color: var(--primary-color);
+            font-size: 19px; /* تصغير حجم العنوان */
+            font-weight: 800;
+            margin: 5px 0;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 13px; /* تصغير الخط */
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .links-container {
+            padding: 0 20px 10px;
+        }
+
+        /* تصميم الروابط كأزرار أصغر */
+        .reg-link {
+            display: block;
+            background: #fff;
+            border: 2px solid #eee;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 12px 15px; /* تقليل حجم الأزرار */
+            margin-bottom: 8px; /* تقليل المسافة بين الأزرار */
+            border-radius: 10px;
+            transition: all 0.2s ease;
+            font-weight: 700;
+            font-size: 14px; /* تصغير خط الأزرار */
+        }
+
+        .reg-link:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: scale(1.01);
+            background-color: #fffafa;
+        }
+
+        /* رابط الموقع الجغرافي */
+        .location-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: #fff5f5;
+        }
+
+        .location-btn i {
+            margin-left: 6px;
+        }
+
+        .footer {
+            background: #f9f9f9;
+            padding: 10px;
+            font-size: 11px;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+
+        /* زر الواتساب العائم */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 50px; /* تصغير حجم الزر */
+            height: 50px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        @media (max-width: 480px) {
+            .container { width: 98%; }
+            .title { font-size: 17px; }
         }
     </style>
 </head>
@@ -128,37 +167,49 @@
 <div class="container">
     <div class="header">
         <img src="https://www.wzufa.com/wp-content/uploads/2022/07/Riyadh-Al-Ebdaa-Schools.png" alt="شعار مدارس رياض الإبداع" class="logo">
-        <div class="year-badge">للعام الدراسي 1448هـ</div>
+        <br>
+        <div class="year-badge">العام الدراسي 1448هـ</div>
         <h1 class="title">بوابة التسجيل الإلكتروني</h1>
-        <p class="subtitle">نرحب بانضمامكم في مدارس رياض الإبداع الأهلية </p>
+        <p class="subtitle">نرحب بانضمامكم في مدارس رياض الإبداع الأهلية</p>
     </div>
 
     <div class="links-container">
-        <!-- الرابط الأول: مستجد -->
-        <a href="https://forms.gle/XSFhEaUk9vcN5FnY7" class="reg-link featured" target="_blank">
-            <span>الصف الأول الابتدائي (مستجد 1448هـ)</span>
+        <!-- الصف الأول الابتدائي -->
+        <a href="https://forms.gle/XSFhEaUk9vcN5FnY7" class="reg-link" target="_blank">
+            <span>الصف الأول الابتدائي (مستجد)</span>
         </a>
 
-        <!-- الرابط الثاني: ابتدائي منتظم -->
+        <!-- طالب منتظم ابتدائي -->
         <a href="https://forms.gle/YdSh2Zn2YzDMmMsv9" class="reg-link" target="_blank">
             <span>طالب منتظم بالمرحلة الابتدائية</span>
         </a>
 
-        <!-- الرابط الثالث: متوسط -->
+        <!-- المرحلة المتوسطة -->
         <a href="#" class="reg-link" target="_blank">
             <span>المرحلة المتوسطة</span>
         </a>
 
-        <!-- الرابط الرابع: ثانوي -->
+        <!-- الصف الأول الثانوي -->
         <a href="https://forms.gle/NduD4c6uLPt7ucqk8" class="reg-link" target="_blank">
             <span>الصف الأول الثانوي</span>
         </a>
     </div>
 
+    <!-- رابط الموقع الجغرافي -->
+    <a href="https://maps.app.goo.gl/ygyzkbYdDNkrLEfJ6" class="location-btn" target="_blank">
+        <i class="fas fa-map-marker-alt"></i>
+        موقع المدرسة على الخريطة
+    </a>
+
     <div class="footer">
-        مدارس رياض الإبداع الأهلية - تعليم متقن في بيئة تربوية آمنة
+        مدارس رياض الإبداع - تعليم متقن في بيئة تربوية آمنة
     </div>
 </div>
+
+<!-- زر الواتساب للتواصل المباشر -->
+<a href="https://wa.me/966554213311" class="whatsapp-float" target="_blank" title="تواصل معنا عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
