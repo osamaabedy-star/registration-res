@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الطلاب | مدارس رياض الإبداع الأهلية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #008751; /* أخضر مستوحى من الشعار */
+            --secondary-color: #0056b3; /* أزرق مستوحى من الشعار */
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            border-top: 8px solid var(--primary-color);
+        }
+
+        .header {
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+        }
+
+        .logo {
+            max-width: 180px;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            color: var(--secondary-color);
+            font-size: 22px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            color: var(--primary-color);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .links-container {
+            padding: 0 25px 40px;
+        }
+
+        .reg-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .reg-link:hover {
+            border-color: var(--secondary-color);
+            background-color: var(--secondary-color);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,86,179,0.2);
+        }
+
+        .reg-link i {
+            margin-left: 10px;
+        }
+
+        /* تمييز رابط الصف الأول الابتدائي */
+        .featured {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+        
+        .featured:hover {
+            background-color: #006b40;
+            color: white;
+        }
+
+        .footer {
+            background: #f9f9f9;
+            padding: 15px;
+            font-size: 12px;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+
+        .year-badge {
+            background: #ffc107;
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img src="https://www.wzufa.com/wp-content/uploads/2022/07/Riyadh-Al-Ebdaa-Schools.png" alt="شعار مدارس رياض الإبداع" class="logo">
+        <div class="year-badge">للعام الدراسي 1448هـ</div>
+        <h1 class="title">بوابة التسجيل الإلكتروني</h1>
+        <p class="subtitle">نرحب بانضمامكم في مدارس رياض الإبداع الأهلية </p>
+    </div>
+
+    <div class="links-container">
+        <!-- الرابط الأول: مستجد -->
+        <a href="https://forms.gle/XSFhEaUk9vcN5FnY7" class="reg-link featured" target="_blank">
+            <span>الصف الأول الابتدائي (مستجد 1448هـ)</span>
+        </a>
+
+        <!-- الرابط الثاني: ابتدائي منتظم -->
+        <a href="https://forms.gle/YdSh2Zn2YzDMmMsv9" class="reg-link" target="_blank">
+            <span>طالب منتظم بالمرحلة الابتدائية</span>
+        </a>
+
+        <!-- الرابط الثالث: متوسط -->
+        <a href="#" class="reg-link" target="_blank">
+            <span>المرحلة المتوسطة</span>
+        </a>
+
+        <!-- الرابط الرابع: ثانوي -->
+        <a href="https://forms.gle/NduD4c6uLPt7ucqk8" class="reg-link" target="_blank">
+            <span>الصف الأول الثانوي</span>
+        </a>
+    </div>
+
+    <div class="footer">
+        مدارس رياض الإبداع الأهلية - تعليم متقن في بيئة تربوية آمنة
+    </div>
+</div>
+
+</body>
+</html>
